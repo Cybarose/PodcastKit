@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Kit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="brand">
+                <img src="https://i.postimg.cc/HLSfCyQN/Podcast-Kit-Logo-1.png" alt="Podcast Kit" style="display: block; height: 120px; width: auto; margin: 0 auto;">
+                <h1 style="display: none;">Podcast Kit</h1>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="nav-item active" data-panel="visual">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                </svg>
+                <div>Visual</div>
+            </div>
+            <div class="nav-item" data-panel="audio">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                </svg>
+                <div>Audio</div>
+            </div>
+            <div class="nav-item" data-panel="analytics">
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/>
+                </svg>
+                <div>Analytics</div>
+            </div>
+            <div class="nav-item" data-panel="ai-assistant">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                </svg>
+                <div>AI Chat</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="agent-panel active" id="visual">
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                                <path d="M363-280ZM46-160l138-276q10-20 28.5-32t41.5-12q24 0 44 12.5t29 35.5l27 66q2 6 9 5.5t9-6.5l86-287q14-48 53.5-77t89.5-29q49 0 87.5 28.5T742-657l36 104q-15 5-28.5 13T724-520l-14 15-44-127q-8-23-25-35.5T601-680q-23 0-40.5 13T535-631l-86 287q-9 28-32.5 46T363-280q-27 0-50-14.5T280-335l-27-66-118 241H46Zm514 40v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T903-340L683-120H560Zm300-263-37-37 37 37ZM620-180h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19ZM240-560q-50 0-85-35.5T120-680q0-50 35-85t85-35q50 0 85 35t35 85q0 49-35 84.5T240-560Zm0-80q17 0 28.5-11.5T280-680q0-17-11.5-28.5T240-720q-17 0-28.5 11.5T200-680q0 17 11.5 28.5T240-640Zm0-40Z"/>
+                            </svg>
+                        </div>
+                        <div class="agent-info">
+                            <h3>Cover Designer</h3>
+                            <p>Create Episode Covers</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Episode Information</label>
+                        <input type="text" class="input" placeholder="Episode title" value="Master Your Podcast Workflow">
+                        <div style="display: flex; gap: 12px; margin-top: 12px;">
+                            <input type="number" class="input" placeholder="Episode #" value="42" style="width: 30%;">
+                            <input type="text" class="input" placeholder="Guest name (optional)" style="width: 70%;">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Design Style</label>
+                        <div class="template-grid">
+                            <div class="template-option selected">
+                                <div class="template-content">
+                                    <svg class="template-icon" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="M12 8v8M8 12h8"/>
+                                    </svg>
+                                    <div class="template-name">Minimal</div>
+                                </div>
+                            </div>
+                            <div class="template-option">
+                                <div class="template-content">
+                                    <svg class="template-icon" viewBox="0 0 24 24">
+                                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                        <path d="M9 9h6v6H9z"/>
+                                    </svg>
+                                    <div class="template-name">Modern</div>
+                                </div>
+                            </div>
+                            <div class="template-option">
+                                <div class="template-content">
+                                    <svg class="template-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                                    <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm457-560 21-89-71-59 94-8 36-84 36 84 94 8-71 59 21 89-80-47-80 47ZM480-481Z"/>
+                                    </svg>
+                                    <div class="template-name">Bold</div>
+                                </div>
+                            </div>
+                            <div class="template-option">
+                                <div class="template-content">
+                                    <svg class="template-icon"  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                                        <path d="M120-520v-320h320v320H120Zm0 400v-320h320v320H120Zm400-400v-320h320v320H520Zm0 400v-320h320v320H520ZM200-600h160v-160H200v160Zm400 0h160v-160H600v160Zm0 400h160v-160H600v160Zm-400 0h160v-160H200v160Zm400-400Zm0 240Zm-240 0Zm0-240Z"/>
+                                    </svg>
+                                    <div class="template-name">Grid</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Brand Assets</label>
+                        <div class="upload-zone">
+                            <div class="upload-content">
+                                <svg class="upload-icon" viewBox="0 0 24 24">
+                                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                </svg>
+                                <div class="upload-text">Upload your logo or podcast artwork</div>
+                                <div class="upload-subtext">PNG, JPG, SVG • High resolution recommended</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" onclick="generateAsset('cover')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                                <path d="M363-280ZM46-160l138-276q10-20 28.5-32t41.5-12q24 0 44 12.5t29 35.5l27 66q2 6 9 5.5t9-6.5l86-287q14-48 53.5-77t89.5-29q49 0 87.5 28.5T742-657l36 104q-15 5-28.5 13T724-520l-14 15-44-127q-8-23-25-35.5T601-680q-23 0-40.5 13T535-631l-86 287q-9 28-32.5 46T363-280q-27 0-50-14.5T280-335l-27-66-118 241H46Zm514 40v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T903-340L683-120H560Zm300-263-37-37 37 37ZM620-180h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19ZM240-560q-50 0-85-35.5T120-680q0-50 35-85t85-35q50 0 85 35t35 85q0 49-35 84.5T240-560Zm0-80q17 0 28.5-11.5T280-680q0-17-11.5-28.5T240-720q-17 0-28.5 11.5T200-680q0 17 11.5 28.5T240-640Zm0-40Z"/>
+                            </svg>
+                        <span>Generate Cover</span>
+                    </button>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                                <path d="m228-240 92-160q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 23-5.5 42.5T458-480L320-240h-92Zm360 0 92-160q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 23-5.5 42.5T818-480L680-240h-92ZM320-500q25 0 42.5-17.5T380-560q0-25-17.5-42.5T320-620q-25 0-42.5 17.5T260-560q0 25 17.5 42.5T320-500Zm360 0q25 0 42.5-17.5T740-560q0-25-17.5-42.5T680-620q-25 0-42.5 17.5T620-560q0 25 17.5 42.5T680-500Zm0-60Zm-360 0Z"/>
+                            </svg>
+                        </div>
+                        <div class="agent-info">
+                            <h3>Quote Cards</h3>
+                            <p>Social Media Content</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Quote Text</label>
+                        <textarea class="textarea" placeholder="Enter memorable quote from your episode...">"Behind every smooth production is an invisible process done right."</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Attribution</label>
+                        <input type="text" class="input" placeholder="Speaker name" value="Dr. Kernel Kurt">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Target Platforms</label>
+                        <div class="platform-grid">
+                            <div class="platform-option selected">
+                                    <svg class="platform-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"></path>
+                                    </svg>
+                                <div>Instagram</div>
+                            </div>
+                            <div class="platform-option selected">
+                               <svg class="platform-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50">
+                                    <path d="M37,4H13c-4.962,0-9,4.037-9,9v24c0,4.963,4.038,9,9,9h24c4.962,0,9-4.037,9-9V13C46,8.037,41.962,4,37,4z M35,27v4v0.021	h-0.002C34.986,33.768,32.749,36,30,36h-0.5c-0.987,0-1.933-0.42-2.596-1.152c-0.662-0.731-0.985-1.718-0.887-2.705	C26.195,30.38,27.787,29,29.643,29H31c1.103,0,2-0.897,2-2v-9.795l-12,2.25V30v4c0,2.757-2.243,5-5,5h-0.5	c-0.987,0-1.933-0.42-2.596-1.152c-0.662-0.731-0.985-1.718-0.887-2.705C12.195,33.38,13.787,32,15.643,32H17c1.103,0,2-0.897,2-2	V15.353c0-0.963,0.687-1.79,1.633-1.966l12.591-2.36c0.439-0.083,0.891,0.033,1.234,0.319C34.803,11.632,35,12.053,35,12.5V27z"></path>
+                               </svg>
+                                <div>Apple Music</div>
+                            </div>
+                            <div class="platform-option">
+                                <svg class="platform-icon" viewBox="0 0 24 24">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect x="2" y="9" width="4" height="12"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                                <div>LinkedIn</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" onclick="generateAsset('quote')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                                <path d="m228-240 92-160q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 23-5.5 42.5T458-480L320-240h-92Zm360 0 92-160q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 23-5.5 42.5T818-480L680-240h-92ZM320-500q25 0 42.5-17.5T380-560q0-25-17.5-42.5T320-620q-25 0-42.5 17.5T260-560q0 25 17.5 42.5T320-500Zm360 0q25 0 42.5-17.5T740-560q0-25-17.5-42.5T680-620q-25 0-42.5 17.5T620-560q0 25 17.5 42.5T680-500Zm0-60Zm-360 0Z"/>
+                            </svg>
+                        <span>Create Quote Cards</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="agent-panel" id="audio">
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                            </svg>
+                        </div>
+                        <div class="agent-info">
+                            <h3>Audiogram Creator</h3>
+                            <p>Visual Audio Content</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Audio File</label>
+                        <div class="upload-zone">
+                            <div class="upload-content">
+                                <svg class="upload-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg>
+                                <div class="upload-text">Upload your podcast audio</div>
+                                <div class="upload-subtext">MP3, WAV, M4A • Up to 100MB</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 16px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label class="label">Start Time (s)</label>
+                            <input type="number" class="input" placeholder="0" value="0">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label class="label">Duration (s)</label>
+                            <input type="number" class="input" placeholder="30" value="30">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                            <input type="checkbox" checked>
+                            <span class="label" style="margin: 0;">Auto-generate captions with AI</span>
+                        </label>
+                    </div>
+
+                    <div class="progress-container" id="audiogram-progress">
+                        <div class="progress-label">
+                            <span>Processing audio...</span>
+                            <span>67%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 67%;"></div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" onclick="generateAsset('audiogram')">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                        </svg>
+                        <span>Generate Audiogram</span>
+                    </button>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar">
+                        </div>
+                        <div class="agent-info">
+                            <h3>Content Repurposing</h3>
+                            <p>Multi-Platform Content</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Content Strategy</label>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; font-size: 14px; color: var(--text-secondary);">
+                                <input type="checkbox" checked>
+                                <span>Generate TikTok/Shorts clips</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; font-size: 14px; color: var(--text-secondary);">
+                                <input type="checkbox" checked>
+                                <span>Extract key moments timeline</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; font-size: 14px; color: var(--text-secondary);">
+                                <input type="checkbox">
+                                <span>Create newsletter summary</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Video Length</label>
+                        <select class="select">
+                            <option>30 seconds</option>
+                            <option>60 seconds</option>
+                            <option>90 seconds</option>
+                            <option>3 minutes</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-secondary btn-block">
+                        <span>Repurpose Content</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="agent-panel" id="analytics">
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/>
+                            </svg>
+                        </div>
+                        <div class="agent-info">
+                            <h3>Analytics Designer</h3>
+                            <p>Performance Visualizations</p>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">47.2K</div>
+                            <div class="stat-label">Total Downloads</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">4.9</div>
+                            <div class="stat-label">Avg Rating</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">78%</div>
+                            <div class="stat-label">Completion Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">1.2K</div>
+                            <div class="stat-label">Subscribers</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Time Period</label>
+                        <select class="select">
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 3 months</option>
+                            <option>All time</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Chart Style</label>
+                        <div class="template-grid">
+                            <div class="template-option selected">
+                                <div class="template-content">
+                                    <svg class="template-icon" viewBox="0 0 24 24">
+                                        <path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/>
+                                    </svg>
+                                    <div class="template-name">Bar Chart</div>
+                                </div>
+                            </div>
+                            <div class="template-option">
+                                <div class="template-content">
+                                    <svg class="template-icon" viewBox="0 0 24 24">
+                                        <path d="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"/>
+                                    </svg>
+                                    <div class="template-name">Line Chart</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/>
+                        </svg>
+                        <span>Generate Analytics</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="agent-panel" id="ai-assistant">
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                            </svg>
+                        </div>
+                        <div class="agent-info">
+                            <h3>AI Creative Assistant</h3>
+                            <p>Intelligent Content Creation</p>
+                        </div>
+                    </div>
+
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="chat-message ai">
+                                Hi! I'm your AI assistant. I can help you create episode covers, analyze your content for quotes, suggest improvements, and generate creative ideas. What would you like to work on?
+                            </div>
+                        </div>
+                        <div class="chat-input-container">
+                            <input type="text" class="chat-input" placeholder="Ask me anything about your podcast..." id="chat-input">
+                            <button class="chat-send" onclick="sendMessage()">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Quick Actions</label>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <button class="btn btn-secondary btn-block quick-action-btn" onclick="quickAction('analyze')">
+                                <span>Analyze my content for quotes</span>
+                            </button>
+                            <button class="btn btn-secondary btn-block quick-action-btn" onclick="quickAction('suggestions')">
+                                <span>Get creative suggestions</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="success-toast" id="success-toast">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <span>Asset created successfully!</span>
+        </div>
+    </div>
+
+    <script>
+        let chatMessages = [
+            {
+                type: 'ai',
+                text: "Hi! I'm your AI assistant. I can help you create episode covers, analyze your content for quotes, suggest improvements, and generate creative ideas. What would you like to work on?"
+            }
+        ];
+
+        function loadChatMessages() {
+            const container = document.getElementById('chat-messages');
+            container.innerHTML = '';
+            
+            chatMessages.forEach(msg => {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `chat-message ${msg.type}`;
+                msgDiv.textContent = msg.text;
+                container.appendChild(msgDiv);
+            });
+            
+            container.scrollTop = container.scrollHeight;
+        }
+
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                document.querySelectorAll('.agent-panel').forEach(p => p.classList.remove('active'));
+                
+                this.classList.add('active');
+                const panelId = this.getAttribute('data-panel');
+                document.getElementById(panelId).classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.template-option').forEach(option => {
+            option.addEventListener('click', function() {
+                this.parentNode.querySelectorAll('.template-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        document.querySelectorAll('.platform-option').forEach(option => {
+            option.addEventListener('click', function() {
+                this.classList.toggle('selected');
+            });
+        });
+
+        document.querySelectorAll('.upload-zone').forEach(zone => {
+            zone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.classList.add('dragover');
+            });
+
+            zone.addEventListener('dragleave', function() {
+                this.classList.remove('dragover');
+            });
+
+            zone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.classList.remove('dragover');
+                
+                const uploadText = this.querySelector('.upload-text');
+                const uploadSubtext = this.querySelector('.upload-subtext');
+                uploadText.textContent = 'File uploaded successfully!';
+                uploadSubtext.textContent = 'Click to change file';
+                uploadText.style.color = 'var(--accent-teal)';
+            });
+
+            zone.addEventListener('click', function() {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*,audio/*';
+                input.onchange = () => {
+                    const uploadText = this.querySelector('.upload-text');
+                    const uploadSubtext = this.querySelector('.upload-subtext');
+                    uploadText.textContent = `${input.files[0].name}`;
+                    uploadSubtext.textContent = 'Click to change file';
+                    uploadText.style.color = 'var(--accent-teal)';
+                };
+                input.click();
+            });
+        });
+
+        function generateAsset(type) {
+            const button = event.target.closest('button');
+            const originalHTML = button.innerHTML;
+            
+            button.innerHTML = `
+                <svg viewBox="0 0 24 24" style="animation: spin 1s linear infinite;">
+                    <path d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z"/>
+                </svg>
+                <span>Generating...</span>
+            `;
+            button.disabled = true;
+
+            if (type === 'audiogram') {
+                document.getElementById('audiogram-progress').classList.add('show');
+                let progress = 0;
+                const progressInterval = setInterval(() => {
+                    progress += Math.random() * 15;
+                    if (progress > 100) progress = 100;
+                    
+                    const fill = document.querySelector('#audiogram-progress .progress-fill');
+                    const label = document.querySelector('#audiogram-progress .progress-label span:last-child');
+                    fill.style.width = progress + '%';
+                    label.textContent = Math.round(progress) + '%';
+                    
+                    if (progress >= 100) {
+                        clearInterval(progressInterval);
+                        setTimeout(() => {
+                            document.getElementById('audiogram-progress').classList.remove('show');
+                        }, 1000);
+                    }
+                }, 200);
+            }
+            
+            setTimeout(() => {
+                showSuccess();
+                button.innerHTML = originalHTML;
+                button.disabled = false;
+            }, type === 'audiogram' ? 3000 : 2000);
+        }
+
+        function showSuccess() {
+            const toast = document.getElementById('success-toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            
+            if (input.value.trim()) {
+                chatMessages.push({
+                    type: 'user',
+                    text: input.value
+                });
+                
+                const userInput = input.value;
+                input.value = '';
+                
+                loadChatMessages();
+                
+                setTimeout(() => {
+                    let aiResponse;
+                    if (userInput.toLowerCase().includes('quote')) {
+                        aiResponse = 'I found 3 potential quotes in your latest episode! Would you like me to create social media cards for: "The future is built by those who dare to imagine it differently"?';
+                    } else if (userInput.toLowerCase().includes('cover')) {
+                        aiResponse = 'For your episode about AI, I suggest using the "Bold" template with a neural network background. Should I generate some variations?';
+                    } else {
+                        aiResponse = 'That\'s an interesting idea! I can help you create compelling visual content for that. What specific format would work best for your audience?';
+                    }
+                    
+                    chatMessages.push({
+                        type: 'ai',
+                        text: aiResponse
+                    });
+                    
+                    loadChatMessages();
+                }, 1000);
+            }
+        }
+
+        function quickAction(action) {
+            let aiResponse;
+            if (action === 'analyze') {
+                aiResponse = 'Analyzing your content... Found 5 quotable moments! The most engaging quote: "Innovation happens when curiosity meets courage." Should I create quote cards?';
+            } else if (action === 'suggestions') {
+                aiResponse = 'Based on your content style, I suggest: 1) Behind-the-scenes content, 2) Guest highlight reels, 3) Key insights compilation. Which interests you most?';
+            }
+            
+            chatMessages.push({
+                type: 'ai',
+                text: aiResponse
+            });
+            
+            loadChatMessages();
+        }
+
+        document.getElementById('chat-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadChatMessages();
+            console.log('🎙️ Podcast Kit loaded successfully!');
+        });
+    </script>
+</body>
+</html>
